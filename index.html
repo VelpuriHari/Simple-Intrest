@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velpuri Hari</title>
+    <script>
+      function calculator() {
+        let d1 = new Date(document.getElementById("start").value);
+        let d2 = new Date(document.getElementById("end").value);
+        const days = (d2 - d1) / (1000 * 3600 * 24) + 1;
+        let amount = document.getElementById("amt").value;
+        let int = document.getElementById("intrest").value;
+        let Total = parseInt(amount) + (amount * days * int) / 3000;
+        document.getElementById("total").innerHTML = Math.ceil(Total);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Simple Intrest</h1>
+    <table>
+      <tr>
+        <td>Starting Date :</td>
+        <td><input type="date" id="start" /></td>
+      </tr>
+      <tr>
+        <td>Ending Date :</td>
+        <td><input type="date" id="end" /></td>
+      </tr>
+      <tr>
+        <td>Ammount</td>
+        <td><input type="number" id="amt" /></td>
+      </tr>
+      <tr>
+        <td>Intrest</td>
+        <td><input type="number" id="intrest" /></td>
+      </tr>
+      <tr>
+        <td><button onclick="{calculator()}">Submit</button></td>
+        <td><h1 id="total"></h1></td>
+      </tr>
+    </table>
+  </body>
+</html>
